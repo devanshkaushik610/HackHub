@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HackHub - Hackathon Management Platform</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== Navigation Bar ===== -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="brand" data-page="home">Hack<span>Hub</span></a>
+      <button id="menu-btn" class="menu-btn" aria-label="Toggle menu">&#9776;</button>
+      <nav id="nav-links" class="nav-links"></nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ===== Home ===== -->
+    <section id="page-home" class="page">
+      <div class="hero card">
+        <h1>Welcome to HackHub</h1>
+        <p class="muted">Register, form a team, pick a problem statement, submit your project and climb the leaderboard.</p>
+        <div id="hero-buttons" class="btn-row"></div>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card stat"><h2 id="stat-participants">0</h2><p class="muted">Participants</p></div>
+        <div class="card stat"><h2 id="stat-teams">0</h2><p class="muted">Teams</p></div>
+        <div class="card stat"><h2 id="stat-projects">0</h2><p class="muted">Projects Submitted</p></div>
+      </div>
+
+      <h2 class="section-title">Latest Announcements</h2>
+      <div id="home-announcements"></div>
+    </section>
+
+    <!-- ===== Register / Login ===== -->
+    <section id="page-auth" class="page">
+      <div class="auth-wrap">
+        <div class="tabs">
+          <button id="tab-login" class="tab active" data-action="show-login">Login</button>
+          <button id="tab-register" class="tab" data-action="show-register">Register</button>
+        </div>
+
+        <form id="login-form" class="card" novalidate>
+          <h2>Login</h2>
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" placeholder="you@college.edu">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" placeholder="Your password">
+          <button type="submit" class="btn full">Login</button>
+        </form>
+
+        <form id="register-form" class="card hidden" novalidate>
+          <h2>Register</h2>
+          <label for="reg-name">Full Name</label>
+          <input type="text" id="reg-name" placeholder="Your name">
+          <label for="reg-email">Email</label>
+          <input type="email" id="reg-email" placeholder="you@college.edu">
+          <label for="reg-college">College Name</label>
+          <input type="text" id="reg-college" placeholder="Your college">
+          <label for="reg-password">Password (min 6 characters)</label>
+          <input type="password" id="reg-password" placeholder="Create a password">
+          <button type="submit" class="btn full">Create Account</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== Dashboard ===== -->
+    <section id="page-dashboard" class="page">
+      <h1 class="section-title">Dashboard</h1>
+      <div id="dashboard-content"></div>
+    </section>
+
+    <!-- ===== Teams ===== -->
+    <section id="page-teams" class="page">
+      <h1 class="section-title">Teams</h1>
+      <div id="teams-content"></div>
+    </section>
+
+    <!-- ===== Problem Statements ===== -->
+    <section id="page-problems" class="page">
+      <h1 class="section-title">Problem Statements</h1>
+      <p class="muted" id="problems-note"></p>
+      <div id="problems-content" class="grid grid-2"></div>
+    </section>
+
+    <!-- ===== Project Submission ===== -->
+    <section id="page-submit" class="page">
+      <h1 class="section-title">Project Submission</h1>
+      <div id="submit-content"></div>
+      <h2 class="section-title">Submitted Projects</h2>
+      <div id="submitted-projects" class="grid grid-2"></div>
+    </section>
+
+    <!-- ===== Leaderboard ===== -->
+    <section id="page-leaderboard" class="page">
+      <h1 class="section-title">Leaderboard</h1>
+      <div id="leaderboard-content"></div>
+    </section>
+
+    <!-- ===== Announcements ===== -->
+    <section id="page-announcements" class="page">
+      <h1 class="section-title">Announcements</h1>
+      <div id="announcements-content"></div>
+    </section>
+
+    <!-- ===== Organizer Panel ===== -->
+    <section id="page-organizer" class="page">
+      <h1 class="section-title">Organizer Panel</h1>
+      <div id="organizer-content"></div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p class="muted">HackHub &copy; College Project &mdash; data is stored in your browser (LocalStorage)</p>
+  </footer>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
